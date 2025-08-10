@@ -17,12 +17,29 @@ public class RemoveDuplicates {
         return k;
     }
 
+    static int removeDuplicates2(int[] nums){
+        int i =0;
+        for(int j = 1;i<nums.length;i++){
+            if(nums[i] != nums[j]){
+                i++;
+                nums[i] = nums[j];
+
+            }
+        }
+        return i+1;
+    }
+
     public static void main(String[] args) {
-        int[] arr = {0,0,1,1,1,2,2,3,3,4};
+//        int[] arr = {0,0,1,1,1,2,2,3,3,4};
+//        int k = removeDuplicates(arr);
+//        System.out.println(k);
+//        for(int i=0;i<k;i++){
+//            System.out.println(arr[i]);
+//        }
+        int arr[] = {1,1,2,2,2,3,3};
         int k = removeDuplicates(arr);
-        System.out.println(k);
-        for(int i=0;i<k;i++){
-            System.out.println(arr[i]);
+        for (int i = 0; i < k; i++) {
+            System.out.print(arr[i] + " ");
         }
 
     }
